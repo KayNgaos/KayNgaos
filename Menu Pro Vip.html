@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KayNgaos2k12 | Hacker Terminal</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #000;
+      color: #00ff00;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 600px;
+      margin: 40px auto;
+      background: #000;
+      border: 2px solid #00ff00;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 0 20px #00ff00;
+    }
+
+    h2, .version {
+      text-align: center;
+      color: #00ff00;
+    }
+
+    .version {
+      font-size: 14px;
+      margin-bottom: 20px;
+      opacity: 0.7;
+    }
+
+    .key-input-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      background: #000;
+      color: #00ff00;
+      border: 2px solid #00ff00;
+      border-radius: 5px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .btn {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #000;
+      border: 2px solid #00ff00;
+      color: #00ff00;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .btn:hover {
+      background: #00ff00;
+      color: #000;
+    }
+
+    .switch-group {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px dashed #00ff00;
+      padding: 10px;
+      margin: 10px 0;
+    }
+
+    .switch-label {
+      font-size: 16px;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 42px;
+      height: 22px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0;
+      right: 0; bottom: 0;
+      background-color: #003300;
+      transition: 0.4s;
+      border-radius: 22px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 3px;
+      bottom: 3px;
+      background-color: #00ff00;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #00ff00;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(20px);
+      background-color: #000;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      color: #00ff00;
+      margin-top: 20px;
+      opacity: 0.6;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    #keyMessage {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    #statusMessage {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 15px;
+    }
+
+    ::selection {
+      background: #00ff00;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>💀 KayNgaos2k12 Hack Aim💀</h2>
+    <div class="version">AimLock Vip Pro Antiban</div>
+
+    <div class="key-input-container" id="keySection">
+      <input type="password" id="keyInput" placeholder=">> Nhập key để truy cập hệ thống..." />
+      <button class="btn" onclick="checkKey()">[ ENTER ]</button>
+      <div id="keyMessage"></div>
+    </div>
+
+    <div id="menuContent" class="hidden">
+      <div class="switch-group"><span class="switch-label">> AIMLOCK</span><label class="switch"><input type="checkbox" checked /><span class="slider"></span></label></div>
+      <div class="switch-group"><span class="switch-label">> AIMBOT</span><label class="switch"><input type="checkbox" /><span class="slider"></span></label></div>
+      <div class="switch-group"><span class="switch-label">> NO RECOIL</span><label class="switch"><input type="checkbox" /><span class="slider"></span></label></div>
+      <div class="switch-group"><span class="switch-label">> AIM HEAD</span><label class="switch"><input type="checkbox" /><span class="slider"></span></label></div>
+      <div class="switch-group"><span class="switch-label">> SENSI MODEL</span><label class="switch"><input type="checkbox" /><span class="slider"></span></label></div>
+      <div class="switch-group"><span class="switch-label">> AUTO AIM</span><label class="switch"><input type="checkbox" /><span class="slider"></span></label></div>
+      <div class="switch-group"><span class="switch-label">> TRICK LOCK</span><label class="switch"><input type="checkbox" /><span class="slider"></span></label></div>
+
+      <div id="statusMessage"></div>
+    </div>
+
+    <div class="footer">
+    <br>
+      © 2025 KayNgaos2k12 | tiktok: @KayNgaos2k12
+    </div>
+  </div>
+
+  <script>
+    function checkKey() {
+      const inputKey = document.getElementById("keyInput").value;
+      const correctKey = "MenuvipprocuaKay";
+
+      if (inputKey === correctKey) {
+        document.getElementById("menuContent").classList.remove("hidden");
+        document.getElementById("keySection").classList.add("hidden");
+      } else {
+        const msg = document.getElementById("keyMessage");
+        msg.innerText = "[ ACCESS DENIED ] ❌ Sai key rồi Bro!";
+        msg.style.color = "red";
+      }
+    }
+
+    // Gắn sự kiện toggle khi trang load
+    window.onload = function () {
+      const switches = document.querySelectorAll('#menuContent input[type="checkbox"]');
+      const statusMsg = document.getElementById("statusMessage");
+
+      switches.forEach((checkbox) => {
+        checkbox.addEventListener('change', function () {
+          const label = this.closest('.switch-group').querySelector('.switch-label').innerText;
+          if (this.checked) {
+            statusMsg.innerText = `[ ${label.trim()} ] ➜ Đã bật thành công ✅`;
+            statusMsg.style.color = "#00ff00";
+          } else {
+            statusMsg.innerText = `[ ${label.trim()} ] ➜ Đã tắt ❌`;
+            statusMsg.style.color = "orange";
+          }
+        });
+      });
+    };
+  </script>
+</body>
+</html>
+
